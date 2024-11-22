@@ -28,15 +28,14 @@ subBtn.addEventListener('click', function () {
         clear();
     }
     else
-        console.log('hello');
     boxInfo.classList.remove('d-none');
     closeBtn.addEventListener('click', function () {
         boxInfo.classList.add('d-none')
     })
 })
-vistBtn.addEventListener('click', () => {
+function vist () {
     window.open(nameUrl.value , '_blank')
-})
+}
 
 function display() {
     var container = '';
@@ -45,7 +44,7 @@ function display() {
     <tr>
 <td>${i + 1}</td>
 <td>${webSites[i].name}</td>
-<td><button id="vistBtn" class="btn btn-visit"><i class="fa-solid fa-eye"></i> Visit</button></td>
+<td><button onclick="vist()" id="vistBtn" class="btn btn-visit"><i class="fa-solid fa-eye"></i> Visit</button></td>
 <td><button onclick="deleter(${i})" class="btn btn-delet"><i class="fa-solid fa-trash-can"></i> Delete</button></td>
 </tr>`;
     }
