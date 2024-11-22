@@ -4,6 +4,7 @@ var subBtn = document.getElementById('submitBtn');
 var tableBody = document.getElementById('tableBody');
 var boxInfo = document.getElementById('boxInfo');
 var closeBtn = document.getElementById('closeBtn');
+var vistBtn = document.getElementById('vistBtn');
 
 var webSites = []
 //// webSites=localStorage.getItem(JSON.parse(webSites));
@@ -16,7 +17,7 @@ if (JSON.parse(localStorage.getItem("container"))) {
 }
 
 subBtn.addEventListener('click', function () {
-    if (validation(element)) {
+    if (validation(nameSite) && validation(nameUrl)) {
         var webSite = {
             name: nameSite.value,
             url: nameUrl.value
@@ -33,6 +34,9 @@ subBtn.addEventListener('click', function () {
         boxInfo.classList.add('d-none')
     })
 })
+vistBtn.addEventListener('click', () => {
+    window.open(nameUrl.value , '_blanck')
+})
 
 function display() {
     var container = '';
@@ -41,7 +45,7 @@ function display() {
     <tr>
 <td>${i + 1}</td>
 <td>${webSites[i].name}</td>
-<td><button class="btn btn-visit"><i class="fa-solid fa-eye"></i> Visit</button></td>
+<td><button id="vistBtn" class="btn btn-visit"><i class="fa-solid fa-eye"></i> Visit</button></td>
 <td><button onclick="deleter(${i})" class="btn btn-delet"><i class="fa-solid fa-trash-can"></i> Delete</button></td>
 </tr>`;
     }
