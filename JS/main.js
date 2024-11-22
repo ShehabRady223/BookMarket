@@ -33,7 +33,8 @@ subBtn.addEventListener('click', function () {
     })
 })
 function vist (index) {
-    window.open(webSites[index].url , '_blank')
+    var link = webSites[index].url
+    window.open( link , '_blank')
 }
 
 function display() {
@@ -43,7 +44,7 @@ function display() {
     <tr>
 <td>${i + 1}</td>
 <td>${webSites[i].name}</td>
-<td><button onclick="vist(${i})" id="vistBtn" class="btn btn-visit"><i class="fa-solid fa-eye"></i> Visit</button></td>
+<td><button onclick="vist(${i})" class="btn btn-visit"><i class="fa-solid fa-eye"></i> Visit</button></td>
 <td><button onclick="deleter(${i})" class="btn btn-delet"><i class="fa-solid fa-trash-can"></i> Delete</button></td>
 </tr>`;
     }
