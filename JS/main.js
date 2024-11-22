@@ -24,6 +24,10 @@ subBtn.addEventListener('click', function () {
         webSites.push(webSite);
         localStorage.setItem("container", JSON.stringify(webSites))
         display();
+        nameSite.classList.remove('is-valid')
+        nameUrl.classList.remove('is-valid')
+        nameSite.classList.remove('is-invalid')
+        nameUrl.classList.remove('is-invalid')
         clear();
     }
     else
