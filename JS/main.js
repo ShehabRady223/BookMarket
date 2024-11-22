@@ -4,7 +4,6 @@ var subBtn = document.getElementById('submitBtn');
 var tableBody = document.getElementById('tableBody');
 var boxInfo = document.getElementById('boxInfo');
 var closeBtn = document.getElementById('closeBtn');
-var vistBtn = document.getElementById('vistBtn');
 
 var webSites = []
 //// webSites=localStorage.getItem(JSON.parse(webSites));
@@ -33,8 +32,8 @@ subBtn.addEventListener('click', function () {
         boxInfo.classList.add('d-none')
     })
 })
-function vist () {
-    window.open(nameUrl.value , '_blank')
+function vist (index) {
+    window.open(webSites[index].url , '_blank')
 }
 
 function display() {
@@ -44,7 +43,7 @@ function display() {
     <tr>
 <td>${i + 1}</td>
 <td>${webSites[i].name}</td>
-<td><button onclick="vist()" id="vistBtn" class="btn btn-visit"><i class="fa-solid fa-eye"></i> Visit</button></td>
+<td><button onclick="vist(${i})" id="vistBtn" class="btn btn-visit"><i class="fa-solid fa-eye"></i> Visit</button></td>
 <td><button onclick="deleter(${i})" class="btn btn-delet"><i class="fa-solid fa-trash-can"></i> Delete</button></td>
 </tr>`;
     }
