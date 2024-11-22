@@ -35,7 +35,7 @@ subBtn.addEventListener('click', function () {
     })
 })
 vistBtn.addEventListener('click', () => {
-    window.open(nameUrl.value , '_blanck')
+    window.open(nameUrl.value , '_blank')
 })
 
 function display() {
@@ -66,7 +66,7 @@ function deleter(index) {
 function validation(element) {
     var regex = {
         bookName: /^\w{3,}(\s+\w+)*$/,
-        bookUrl: /^\w+\.\w{2,}$/
+        bookUrl: /^https?:\/\/\S+$/
     }
     if (regex[element.id].test(element.value)) {
         element.classList.add('is-valid')
